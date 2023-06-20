@@ -5,9 +5,11 @@
 //  Created by Elizeu RS on 15/06/23.
 //
 
-import Foundation
+// https://api.themoviedb.org/3/movie/upcoming?api_key=e0330d7c6c649fe9f0325ddea7eeae4f&language=en-US&page=1"
 
-//https://api.themoviedb.org/3/trending/all/day?api_key=e0330d7c6c649fe9f0325ddea7eeae4f
+import Foundation
+// https://api.themoviedb.org/3/movie/upcoming?api_key=e0330d7c6c649fe9f0325ddea7eeae4f
+// https://api.themoviedb.org/3/trending/movie/day?api_key=e0330d7c6c649fe9f0325ddea7eeae4f
 
 struct Constants {
   static let API_KEY = "e0330d7c6c649fe9f0325ddea7eeae4f"
@@ -79,6 +81,7 @@ class APICaller {
       
       do {
         let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+        completion(.success(results.results))
         print(results)
       } catch  {
         completion(.failure(APIError.failedToGetData))
@@ -97,6 +100,7 @@ class APICaller {
       
       do {
         let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+        completion(.success(results.results))
         print(results)
       } catch  {
 //        print(error.localizedDescription)
@@ -115,6 +119,7 @@ class APICaller {
       
       do {
         let results = try JSONDecoder().decode(TrendingTitleResponse.self, from: data)
+        completion(.success(results.results))
         print(results)
       } catch  {
 //        print(error.localizedDescription)
