@@ -198,7 +198,7 @@ class APICaller {
         
         completion(.success(results.items[0]))
         
-        print(results)
+//        print(results)
       } catch  {
         completion(.failure(error))
         print(error.localizedDescription)

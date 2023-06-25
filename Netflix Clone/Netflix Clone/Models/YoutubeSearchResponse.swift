@@ -8,29 +8,29 @@
 import Foundation
 
 struct YoutubeSearchResponse: Codable {
-    let etag: String
+    let etag: String?
     let items: [VideoElement]
-    let kind: String
-    let nextPageToken: String
-    let pageInfo: PageInfo
-    let regionCode: String
+    let kind: String?
+    let nextPageToken: String?
+    let pageInfo: PageInfo?
+    let regionCode: String?
 }
 
 struct VideoElement: Codable {
-    let etag: String
+    let etag: String?
     let id: IdVideoElement
-    let kind: String
+    let kind: String?
 }
 
 struct IdVideoElement: Codable {
     let kind: String
-    let videoId: String?
+    let videoId: String
     let playlistId: String?
 }
 
 struct PageInfo: Codable {
-    let resultsPerPage: Int
-    let totalResults: Int
+    let resultsPerPage: Int?
+    let totalResults: Int?
 }
 
 
